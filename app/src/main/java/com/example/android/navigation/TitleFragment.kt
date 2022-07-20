@@ -43,7 +43,7 @@ class TitleFragment : Fragment() {
                 R.layout.fragment_title,container,false)
 
         binding.playButton.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         }
         setHasOptionsMenu(true)
         return binding.root
@@ -56,7 +56,7 @@ class TitleFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item,view!!.findNavController())
+        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
                 ||super.onOptionsItemSelected(item)
     }
 
